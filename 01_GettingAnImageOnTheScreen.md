@@ -62,7 +62,7 @@ int main(int argc, char* argv[]) {
 
 ## 代码讲解
 
-本代码较上一章的代码，除了结构变化外仅仅增添了读取和显示图片的代码。在这里本人为了方便管理，将SDL需要使用的变量和操作统一扔到SDL_Struct结构体中进行管理。其中 ```PollEvent()``` 和 ```Quit()``` 函数是仿照OpenGL的形式进行更改的，但是在现代图形引擎中，这一方式已经基本被淘汰，未来我们会改进这一方式。
+本代码较上一章的代码，除了结构变化外仅仅增添了读取和显示图片的代码。在这里本人为了方便管理，将SDL需要使用的变量和操作统一扔到 ```SDL_Struct``` 结构体中进行管理。其中 ```PollEvent()``` 和 ```Quit()``` 函数是仿照OpenGL的形式进行更改的，但是在现代图形引擎中，这一方式已经基本被淘汰，未来我们会改进这一方式。
 
 ## 函数讲解
 
@@ -82,16 +82,16 @@ SDL_Surface* SDL_LoadBMP(const char* file);
 
 <font color=orange>描述</font>
 
-从指定的BMP文件中加载图像数据，并将其存储在一个新的SDL_Surface结构中。此函数会自动管理图像的格式和字节顺序，以便SDL能够直接使用加载的图像数据进行渲染。
+从指定的BMP文件中加载图像数据，并将其存储在一个新的 ```SDL_Surface``` 结构中。此函数会自动管理图像的格式和字节顺序，以便SDL能够直接使用加载的图像数据进行渲染。
 
 <font color=orange>输入</font>
 
-file: 指向 BMP 文件路径的字符串。这个路径可以是绝对路径或相对于程序的当前工作目录。
+```file``` : 指向 BMP 文件路径的字符串。这个路径可以是绝对路径或相对于程序的当前工作目录。
 
 <font color=orange>输出</font>
 
-成功时：返回一个指向SDL_Surface结构的指针，该结构包含加载的BMP图像数据。
-失败时：返回NULL，可以使用SDL_GetError()来获取具体的错误信息。
+成功时：返回一个指向 ```SDL_Surface``` 结构的指针，该结构包含加载的BMP图像数据。
+失败时：返回 ```NULL``` ，可以使用 ```SDL_GetError()``` 来获取具体的错误信息。
 
 ### SDL_BlitSurface
 
@@ -107,15 +107,15 @@ int SDL_BlitSurface(SDL_Surface* src, const SDL_Rect* srcrect, SDL_Surface* dst,
 
 <font color=orange>输入</font>
 
-src：源SDL_Surface，即要复制的图像表面。
-srcrect：指定源表面中的矩形区域，该区域将被复制。如果为 NULL，则会复制整个源表面。
-dst：目标SDL_Surface，即要将内容复制到的表面。
-dstrect：指定目标表面上的矩形区域。如果为NULL，则将图像复制到目标表面的左上角。如果指定了位置，则图像会被复制到此位置。
+```src``` ：源SDL_Surface，即要复制的图像表面。
+```srcrect``` ：指定源表面中的矩形区域，该区域将被复制。如果为 NULL，则会复制整个源表面。
+```dst``` ：目标SDL_Surface，即要将内容复制到的表面。
+```dstrect``` ：指定目标表面上的矩形区域。如果为NULL，则将图像复制到目标表面的左上角。如果指定了位置，则图像会被复制到此位置。
 
 <font color=orange>输出</font>
 
 成功时：返回0。
-失败时：返回-1，并且可以使用SDL_GetError()查看错误信息。
+失败时：返回-1，并且可以使用 ```SDL_GetError()``` 查看错误信息。
 
 ### SDL_FreeSurface
 
@@ -127,11 +127,11 @@ void SDL_FreeSurface(SDL_Surface* surface);
 
 <font color=orange>描述</font>
 
-用于释放一个SDL_Surface结构所分配的内存，包括该表面内部的像素数据。此函数应在表面不再被使用时调用，以确保程序的内存被正确释放。
+用于释放一个 ```SDL_Surface``` 结构所分配的内存，包括该表面内部的像素数据。此函数应在表面不再被使用时调用，以确保程序的内存被正确释放。
 
 <font color=orange>输入</font>
 
-surface：指向要释放的SDL_Surface结构的指针。如果传入NULL，该函数将不执行任何操作。
+```surface``` ：指向要释放的 ```SDL_Surface``` 结构的指针。如果传入 ```NULL``` ，该函数将不执行任何操作。
 
 <font color=orange>输出</font>
 

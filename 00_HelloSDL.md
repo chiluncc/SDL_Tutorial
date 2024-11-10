@@ -103,7 +103,7 @@ int SDL_Init(Uint32 flags)
 
 <font color=orange>输入</font>
 
-flags：为一个位标志，用于指定要初始化的子系统。 **该值可以使用“|”运算符进行组合。** 其具体值可在.h文件中查看，常用值如下：
+```flags``` ：为一个位标志，用于指定要初始化的子系统。 **该值可以使用“|”运算符进行组合。** 其具体值可在.h文件中查看，常用值如下：
 
 |值|含义|
 |:---:|:---:|
@@ -133,18 +133,18 @@ SDL_Window* SDL_CreateWindow(const char* title, int x, int y, int width, int hei
 
 <font color=orange>输入</font>
 
-title：窗口的标题字符串。
-x：窗口的初始x坐标。
-y：窗口的初始y坐标。其和x的值可以为指定的精确值，也可以为预设值，常用预设值如下：
+```title``` ：窗口的标题字符串。
+```x``` ：窗口的初始x坐标。
+```y``` ：窗口的初始y坐标。其和x的值可以为指定的精确值，也可以为预设值，常用预设值如下：
 
 |值|含义|
 |:---:|:---:|
 |SDL_WINDOWPOS_UNDEFINED|表示窗口的位置由系统决定，窗口将根据系统的默认行为进行定位|
 |SDL_WINDOWPOS_CENTERED|表示窗口将在屏幕中心创建（仅适用于窗口的宽度和高度已知的情况）|
 
-width：窗口的宽度（以像素为单位）。
-height：窗口的高度（以像素为单位）。
-flags：窗口的标志，可以控制窗口的属性，如是否可调整大小或是否为全屏。 **部分预设值可通过“|”运算符组合** ，其常用预设值如下：
+```width``` ：窗口的宽度（以像素为单位）。
+```height``` ：窗口的高度（以像素为单位）。
+```flags``` ：窗口的标志，可以控制窗口的属性，如是否可调整大小或是否为全屏。 **部分预设值可通过“|”运算符组合** ，其常用预设值如下：
 
 |值|含义|
 |:---:|:---:|
@@ -160,7 +160,7 @@ flags：窗口的标志，可以控制窗口的属性，如是否可调整大小
 
 <font color=orange>输出</font>
 
-成功时返回一个指向SDL_Window的指针，失败时返回NULL，并可以通过SDL_GetError()获取错误信息。
+成功时返回一个指向 ```SDL_Window``` 的指针，失败时返回 ```NULL``` ，并可以通过 ```SDL_GetError()``` 获取错误信息。
 
 ### SDL_GetError
 
@@ -196,11 +196,11 @@ SDL_Surface* SDL_GetWindowSurface(SDL_Window* window)
 
 <font color=orange>输入</font>
 
-指向要获取表面的SDL_Window指针
+```window``` ：指向要获取表面的SDL_Window指针
 
 <font color=orange>输出</font>
 
-功时返回指向SDL_Surface的指针，该表面与指定窗口相关联；失败时返回NULL，并可通过SDL_GetError()获取错误信息。
+功时返回指向SDL_Surface的指针，该表面与指定窗口相关联；失败时返回NULL，并可通过 ```SDL_GetError()``` 获取错误信息。
 
 ### SDL_FillRect
 
@@ -216,19 +216,19 @@ int SDL_FillRect(SDL_Surface* dst, const SDL_Rect* rect, Uint32 color)
 
 <font color=orange>输入</font>
 
-dst：指向要填充的目标表面（SDL_Surface）的指针。
-rect：指向要填充的矩形区域的指针，如果为NULL，则填充整个表面。可通过以下方式创建：
+```dst``` ：指向要填充的目标表面（ ```SDL_Surface``` ）的指针。
+```rect``` ：指向要填充的矩形区域的指针，如果为NULL，则填充整个表面。可通过以下方式创建：
 
 |创建语句|
 |:---:|
 |SDL_Rect rect; rect.x = 10, rect.y = 20; rect.w = 100; rect.h = 50|
 |SDL_Rect rect = SDL_Rect{10, 20, 100, 50}|
 
-color：要使用的填充颜色，以32位整数获取，可以通过 [SDL_MapRGB](#sdl_maprgb) 或者 [SDL_MapRGBA](#sdl_maprgba) 获取。
+```color``` ：要使用的填充颜色，以32位整数获取，可以通过 [SDL_MapRGB](#sdl_maprgb) 或者 [SDL_MapRGBA](#sdl_maprgba) 获取。
 
 <font color=orange>输出</font>
 
-成功时返回0，失败时返回负值，错误信息可通过 SDL_GetError() 获取。
+成功时返回0，失败时返回负值，错误信息可通过 ```SDL_GetError()``` 获取。
 
 ### SDL_MapRGB
 
@@ -244,14 +244,14 @@ Uint32 SDL_MapRGB(const SDL_PixelFormat* format, Uint8 r, Uint8 g, Uint8 b)
 
 <font color=orange>输入</font>
 
-format：指向目标表面像素格式的指针，通常可以通过SDL_Surface的format成员获得。
-r：红色分量（0-255）。
-g：绿色分量（0-255）。
-b：蓝色分量（0-255）。
+```format``` ：指向目标表面像素格式的指针，通常可以通过SDL_Surface的format成员获得。
+```r``` ：红色分量（0-255）。
+```g``` ：绿色分量（0-255）。
+```b``` ：蓝色分量（0-255）。
 
 <font color=orange>输出</font>
 
-返回映射后的颜色值，以Uint32表示，适用于指定的像素格式。
+返回映射后的颜色值，以 ```Uint32``` 表示，适用于指定的像素格式。
 
 ### SDL_MapRGBA
 
@@ -267,15 +267,15 @@ Uint32 SDL_MapRGBA(const SDL_PixelFormat* format, Uint8 r, Uint8 g, Uint8 b, Uin
 
 <font color=orange>输入</font>
 
-format：指向目标表面像素格式的指针，通常可以通过SDL_Surface的format成员获得。
-r：红色分量（0-255）。
-g：绿色分量（0-255）。
-b：蓝色分量（0-255）。
-a：透明度分量（0-255）。（0：完全透明，255：完全不透明）
+```format``` ：指向目标表面像素格式的指针，通常可以通过SDL_Surface的format成员获得。
+```r``` ：红色分量（0-255）。
+```g``` ：绿色分量（0-255）。
+```b``` ：蓝色分量（0-255）。
+```a``` ：透明度分量（0-255）。（0：完全透明，255：完全不透明）
 
 <font color=orange>输出</font>
 
-返回映射后的颜色值，包括 alpha 通道，以 Uint32 表示。
+返回映射后的颜色值，包括 alpha 通道，以 ```Uint32``` 表示。
 
 ### SDL_UpdateWindowSurface
 
@@ -291,11 +291,11 @@ int SDL_UpdateWindowSurface(SDL_Window* window)
 
 <font color=orange>输入</font>
 
-window：指向要更新的窗口的SDL_Window指针。
+```window``` ：指向要更新的窗口的 ```SDL_Window``` 指针。
 
 <font color=orange>输出</font>
 
-成功时返回0，失败时返回负值，错误信息可通过SDL_GetError()获取。
+成功时返回0，失败时返回负值，错误信息可通过 ```SDL_GetError()``` 获取。
 
 ### SDL_PollEvent
 
@@ -307,15 +307,15 @@ int SDL_PollEvent(SDL_Event* event)
 
 <font color=orange>描述</font>
 
-SDL_PollEvent用于从事件队列中获取下一个事件。调用此函数后，事件信息会填充到event指向的结构中。该函数通常在主循环中使用，用于处理用户输入（如键盘、鼠标事件）和其他事件（如窗口状态变化）。 **与SDL_WaitEvent不同，SDL_PollEvent是非阻塞的** ，如果没有事件，它会立即返回。
+用于从事件队列中获取下一个事件。调用此函数后，事件信息会填充到 ```event``` 指向的结构中。该函数通常在主循环中使用，用于处理用户输入（如键盘、鼠标事件）和其他事件（如窗口状态变化）。 **与 ```SDL_WaitEvent``` 不同， ```SDL_PollEvent``` 是非阻塞的** ，如果没有事件，它会立即返回。
 
 <font color=orange>输入</font>
 
-event：指向SDL_Event结构的指针，用于存储事件信息。
+```event``` ：指向 ```SDL_Event``` 结构的指针，用于存储事件信息。
 
 <font color=orange>输出</font>
 
-如果有事件可用，返回非零值（通常为1），否则返回0。其中event.type常见值如下：
+如果有事件可用，返回非零值（通常为1），否则返回0。其中 ```event.type``` 常见值如下：
 
 |值|含义|
 |:---:|:---:|
@@ -345,7 +345,7 @@ void SDL_DestroyWindow(SDL_Window* window)
 
 <font color=orange>输入</font>
 
-window：指向要销毁的SDL_Window指针。
+```window``` ：指向要销毁的SDL_Window指针。
 
 <font color=orange>输出</font>
 
@@ -361,7 +361,7 @@ void SDL_Quit(void)
 
 <font color=orange>描述</font>
 
-用于清理 SDL 库所占用的所有资源，并关闭SDL子系统。在调用SDL_Quit之前，通常需要确保所有SDL创建的资源（如窗口、表面、音频等）都已被销毁。该函数在程序结束时调用，确保SDL正常退出并释放相关资源。
+用于清理 SDL 库所占用的所有资源，并关闭SDL子系统。在调用 ```SDL_Quit``` 之前，通常需要确保所有SDL创建的资源（如窗口、表面、音频等）都已被销毁。该函数在程序结束时调用，确保SDL正常退出并释放相关资源。
 
 <font color=orange>输入</font>
 
