@@ -77,7 +77,7 @@ int main(int argc, char* args[]) {
 
 ### 目录
 
-[SDLInit](#sdl_init)
+[SDL_Init](#sdl_init)
 [SDL_CreateWindow](#sdl_createwindow)
 [SDL_GetError](#sdl_geterror)
 [SDL_GetWindowSurface](#sdl_getwindowsurface)
