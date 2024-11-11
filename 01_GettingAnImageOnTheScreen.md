@@ -112,6 +112,10 @@ int SDL_BlitSurface(SDL_Surface* src, const SDL_Rect* srcrect, SDL_Surface* dst,
 ```dst``` ：目标SDL_Surface，即要将内容复制到的表面。
 ```dstrect``` ：指定目标表面上的矩形区域。如果为NULL，则将图像复制到目标表面的左上角。如果指定了位置，则图像会被复制到此位置。
 
+> **如果在使用 `SDL_BlitSurface` 时，目标矩阵的尺寸小于源矩形，`SDL_BlitSurface` 会自动进行裁剪（clip），即只绘制目标矩形能容纳的部分内容，而不会进行缩放。裁剪是从源矩形的左上角开始的，即使目标矩形小于源矩形，也会从源矩形的左上角开始复制到目标矩形的左上角。**
+> **如果在使用 `SDL_BlitSurface` 时，目标矩形的尺寸大于源矩形，`SDL_BlitSurface` 仍然不会进行缩放，它只是将源矩形内容直接绘制到目标矩形的位置。由于没有缩放，目标矩形的多余部分会保留原有内容或保持不变。源矩形内容会从目标矩形的左上角开始对齐绘制，目标矩形多余的部分将不会被填充。**
+
+
 <font color=orange>输出</font>
 
 成功时：返回0。

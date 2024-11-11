@@ -204,7 +204,7 @@ typedef struct SDL_MouseWheelEvent
 ```direction``` ：用于指示滚轮方向模式的字段。该字段的值会被设置为 ```SDL_MOUSEWHEEL_NORMAL``` 或 ```SDL_MOUSEWHEEL_FLIPPED``` 。 ```SDL_MOUSEWHEEL_NORMAL``` ：表示 ```x``` 和 ```y``` 的值直接反映滚动方向。 ```SDL_MOUSEWHEEL_FLIPPED``` ：表示 ```x``` 和 ```y``` 的值与正常方向相反。
 ```preciseX``` ：精准型 ```x```。
 ```preciseY``` ：精准型 ```y```。
-**注意，字段的值代表了滚轮在触发该事件时滚动的量，而不是和上一次滚动事件的差值。**
+> **注意，字段的值代表了滚轮在触发该事件时滚动的量，而不是和上一次滚动事件的差值。**
 
 ### SDL_MouseButtonEvent
 

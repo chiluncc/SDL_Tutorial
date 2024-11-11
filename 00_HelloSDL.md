@@ -2,14 +2,7 @@
 
 ## 前言
 
-啊B的文本专栏真的是越改越难用了，只好干脆放弃B站的专栏直接使用markdown了。说起来好几年前就有很多UP向B站反应，希望让专栏可以直接对接markdown，但是啊B一直都没能推出这一改进。 ~~果然专栏对于啊B就是个多余的板块呢。~~ 本专栏主要参照如下网址的教程。
-
-<div align=center>
-
-[https://lazyfoo.net/tutorials/SDL/index.php](https://lazyfoo.net/tutorials/SDL/index.php)
-
-</div>
-
+啊B的文本专栏真的是越改越难用了，只好干脆放弃B站的专栏直接使用markdown了。说起来好几年前就有很多UP向B站反应，希望让专栏可以直接对接markdown，但是啊B一直都没能推出这一改进。 ~~果然专栏对于啊B就是个多余的板块呢。~~ 本专栏主要参照Beginning Game Programming v2.0的教程。
 专栏内容为对该教程的复现、理解和进一步思考。 等等，我为什么要说专栏？
 
 ## 环境搭建
