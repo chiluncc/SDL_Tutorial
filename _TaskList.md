@@ -11,4 +11,9 @@
 
 ## 2024/11/12
 
-- [ ] [03 Key Presses](./03_KeyPresses.md)
+- [x] [03 Key Presses](./03_KeyPresses.md)
+
+## 2024/11/12
+
+- [x] [04 Optimized Surface Loading and Soft Stretching](./04_OptimizedSurfaceLoadingandSoftStretching.md)
+
