@@ -17,3 +17,6 @@
 
 - [x] [04 Optimized Surface Loading and Soft Stretching](./04_OptimizedSurfaceLoadingandSoftStretching.md)
 
+## 2024/11/14
+
+- [x] [05 Extension Libraries and Loading Other Image Formats](./05_ExtensionLibraries.md)
