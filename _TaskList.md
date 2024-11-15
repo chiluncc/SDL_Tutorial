@@ -20,3 +20,7 @@
 ## 2024/11/14
 
 - [x] [05 Extension Libraries and Loading Other Image Formats](./05_ExtensionLibraries.md)
+
+## 2024/11/15
+
+- [x] [051 SDL_RWops](./051_SDLRWops.md)
