@@ -28,4 +28,4 @@
 ## 2024/11/17
 
 - [x] [06 Texture Loading And Rendering](./06_TextureLoadingAndRendering.md)
-- [x] [07 Geometry Rendering]()
+- [x] [07 Geometry Rendering](./07_GeometryRendering.md)
