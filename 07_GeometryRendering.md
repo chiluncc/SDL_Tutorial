@@ -87,7 +87,7 @@ int main(int argc, char* args[]) {
 [SDL_RenderDrawLine](#sdl_renderdrawline)
 [SDL_UpdateTexture](#sdl_updatetexture)
 [SDL_LockTexture](#sdl_locktexture)
-[SDL_UnlockTexture](#sdl_updatetexture)
+[SDL_UnlockTexture](#sdl_unlocktexture)
 
 ### SDL_RenderFillRect
 
