@@ -1,4 +1,4 @@
-# Color Keying
+# 09 Color Keying
 
 ## 前言
 
@@ -40,7 +40,7 @@ int SDL_SetColorKey(SDL_Surface* surface, int flag, Uint32 key);
 
 <font color=orange>描述</font>
 
-为**表面（ `SDL_Surface` ）** 设置色键。`SDL_CreateTextureFromSurface` 会保留色键效果，将设置为色键的颜色转换为透明（ `Alpha` 值为 0）。
+为**表面（ `SDL_Surface` ）** 设置色键。`SDL_CreateTextureFromSurface` 会保留色键效果，将设置为色键的颜色转换为透明（ `Alpha` 值为 0）。**注意，仅能为一个表面设置一个色键。**
 
 <font color=orange>输入</font>
 
@@ -52,7 +52,7 @@ int SDL_SetColorKey(SDL_Surface* surface, int flag, Uint32 key);
 |SDL_TRUE|启用色键功能|
 |SDL_FALSE|禁用色键功能|
 
-`key` ：表示要设置为透明的颜色。这个颜色是通过 `SDL_MapRGB` 或 `SDL_MapRGBA` 将 `RGB` 值映射成像素格式后的值。
+`key` ：表示要设置为透明的颜色。这个颜色是通过 `SDL_MapRGB` 或 `SDL_MapRGBA` 将 `RGB` 值映射成像素格式后的值。**在禁止色键时此值不会被处理。**
 
 <font color=orange>输出</font>
 

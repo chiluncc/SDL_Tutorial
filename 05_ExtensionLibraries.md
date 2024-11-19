@@ -1,4 +1,4 @@
-# Extension Libraries and Loading Other Image Formats
+# 05 Extension Libraries and Loading Other Image Formats
 
 ## 前言
 
