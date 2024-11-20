@@ -34,3 +34,11 @@
 
 - [x] [08 The Viewport](./08_TheViewport.md)
 - [x] [09 Color Keying](./09_ColorKeying.md)
+
+## 2024/11/19
+
+- [x] [10 Clip Rendering And Sprite Sheets](./10_ClipRenderingAndSpriteSheets.md)
+
+## 2024/11/20
+
+- [x] [11 Color Modulation](./11_ColorModulation.md)
