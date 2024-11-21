@@ -42,3 +42,7 @@
 ## 2024/11/20
 
 - [x] [11 Color Modulation](./11_ColorModulation.md)
+
+## 2024/11/21
+
+- [x] [Change All Tutorial](./12_ChangeAllTutorial.md)
