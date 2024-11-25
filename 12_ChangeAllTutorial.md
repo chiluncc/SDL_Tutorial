@@ -25,3 +25,161 @@
 > SDL_GetTextureBlendMode;
 > SDL_SetRenderDrawBlendMode;
 > SDL_GetRenderDrawBlendMode;
+
+再写点TTF相关的吧。
+
+### TTF_RenderUNICODE_Blended
+
+<font color=orange>函数原型</font>
+
+```cpp
+SDL_Surface* TTF_RenderUNICODE_Blended(TTF_Font* font, const Uint16* text, SDL_Color fg);
+```
+
+<font color=orange>描述</font>
+
+将一段 Unicode 编码的文本渲染成一个高质量（抗锯齿）的 `SDL_Surface`，可用于进一步生成纹理或直接绘制。
+
+<font color=orange>输入</font>
+
+`font` ：描述：加载的字体对象，代表字体的样式和大小。通过 TTF_OpenFont 打开。
+`text` ：描述：指向包含 Unicode 编码的宽字符（wchar_t）的文本缓冲区，以 NULL 或 0 结尾。
+`fg` ：描述：前景色，用于指定文本颜色（如白色 {255, 255, 255, 255}）。
+
+<font color=orange>输出</font>
+
+生成的文本图像表面。失败时返回 NULL，可以用 `TTF_GetError` 获取错误信息。
+
+> **其他 `TTF_RenderUNICODE` 系列函数**
+> 
+> |函数名称|功能说明|
+> |:---:|:---:|
+> |`TTF_RenderUNICODE_Solid`|渲染低质量（无抗锯齿）的 Unicode 文本到 `SDL_Surface`。速度快但质量差。|
+> |`TTF_RenderUNICODE_Shaded`|渲染带背景色的 Unicode 文本到 `SDL_Surface`。需要额外指定背景颜色。|
+> |`TTF_RenderUNICODE_Blended`|渲染高质量（抗锯齿）的 Unicode 文本到 `SDL_Surface`。渲染效果最佳。|
+
+### TTF_SizeUNICODE
+
+<font color=orange>函数原型</font>
+
+```cpp
+int TTF_SizeUNICODE(TTF_Font* font, const Uint16* text, int* w, int* h);
+```
+
+<font color=orange>描述</font>
+
+计算指定 Unicode 文本在屏幕上的宽度和高度，不实际渲染。
+
+<font color=orange>输入</font>
+
+`font` ：描述：字体对象。
+`text` ：描述：宽字符（Unicode 编码）的文本缓冲区。
+`w` ：描述：存储文本宽度的指针。
+`h` ：描述：存储文本高度的指针。
+
+<font color=orange>输出</font>
+
+描述：成功返回 0，失败返回 -1。
+
+### TTF_Init
+
+<font color=orange>函数原型</font>
+
+```cpp
+int TTF_Init(void);
+```
+
+<font color=orange>描述</font>
+
+初始化 SDL_ttf 库，在任何使用 TTF 函数之前必须调用。如果未调用，后续操作将失败。
+
+<font color=orange>输入</font>
+
+无输入。
+
+<font color=orange>输出</font>
+
+初始化成功返回 0，失败返回 -1。使用 `TTF_GetError` 获取错误信息。
+
+### TTF_OpenFont
+
+<font color=orange>函数原型</font>
+
+```cpp
+TTF_Font* TTF_OpenFont(const char* file, int ptsize);
+```
+
+<font color=orange>描述</font>
+
+从指定路径加载一个字体文件并设置字号。
+
+<font color=orange>输入</font>
+
+`file` ：字体文件路径（支持 .ttf 格式）。
+`ptsize` ：字体大小（以点为单位，通常与像素值相关）。
+
+<font color=orange>输出</font>
+
+返回加载的字体对象指针，失败时返回 `NULL`。
+
+### TTF_CloseFont
+
+<font color=orange>函数原型</font>
+
+```cpp
+void TTF_CloseFont(TTF_Font* font);
+```
+
+<font color=orange>描述</font>
+
+释放通过 `TTF_OpenFont` 或 `TTF_OpenFontIndex` 加载的字体对象，防止内存泄漏。
+
+> `TTF_OpenFontIndex` ：与 `TTF_OpenFont` 类似，但支持加载字体文件中的特定字体（对于包含多个字体的文件，例如 .ttc 格式）。
+
+<font color=orange>输入</font>
+
+`font` ：需要关闭的字体对象。
+
+<font color=orange>输出</font>
+
+无输出。
+
+### TTF_Quit
+
+<font color=orange>函数原型</font>
+
+```cpp
+void TTF_Quit(void);
+```
+
+<font color=orange>描述</font>
+
+关闭 SDL_ttf 库并释放与其相关的资源。在程序退出前必须调用。
+
+<font color=orange>输入</font>
+
+无输入。
+
+<font color=orange>输出</font>
+
+无输出。
+
+### TTF_GetError
+
+<font color=orange>函数原型</font>
+
+```cpp
+const char* TTF_GetError(void);
+```
+
+<font color=orange>描述</font>
+
+获取最近一次 SDL_ttf 函数失败的错误信息。
+
+<font color=orange>输入</font>
+
+无输入。
+
+<font color=orange>输出</font>
+
+包含错误描述的字符串。
